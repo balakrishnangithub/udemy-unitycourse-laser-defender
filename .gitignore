@@ -29,9 +29,12 @@ ExportedObj/
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+# Unity3D User Specific Files
+ProjectSettings/ProjectSettings.asset
+ProjectSettings/UnityConnectSettings.asset
+
 # Builds
 *.apk
 *.unitypackage
-ProjectSettings/ProjectSettings.asset
 
 .idea/
