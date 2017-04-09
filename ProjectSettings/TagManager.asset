@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy Laser
+    uniqueID: 355101987
+    locked: 0
+  - name: Enemies
+    uniqueID: 503946555
+    locked: 0
+  - name: Player Laser
+    uniqueID: 1399548741
+    locked: 0
+  - name: Player
+    uniqueID: 3448466555
+    locked: 0
