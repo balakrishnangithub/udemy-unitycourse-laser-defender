@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 		// Square Sprite, Pivot Center
 		spritePivotToEdge = sr.sprite.pivot.x / sr.sprite.pixelsPerUnit;
 		maxX = (Camera.main.orthographicSize * Camera.main.aspect) - spritePivotToEdge;
-		damageObject = transform.FindChild ("Damage").gameObject;
+		damageObject = transform.Find ("Damage").gameObject;
 		damageObject.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 
