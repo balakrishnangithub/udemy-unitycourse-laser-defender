@@ -33,22 +33,16 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			this.transform.position = new Vector3 (
-				Mathf.Clamp (this.transform.position.x - playerSpeed * Time.deltaTime, -maxX, maxX), 
-				this.transform.position.y, 
-				0
-			);
+			MoveLeft();
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
-			this.transform.position = new Vector3 (
-				Mathf.Clamp (this.transform.position.x + playerSpeed * Time.deltaTime, -maxX, maxX), 
-				this.transform.position.y, 
-				0
-			);
+			MoveRight();
 		}
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			InvokeRepeating ("FireLaser", 0f, firingRate);
-		} else if (Input.GetKeyUp (KeyCode.Space)) {
-			CancelInvoke ("FireLaser");
+		if (Input.GetKeyDown (KeyCode.Space))
+		{
+			StartFireLaser();
+		} else if (Input.GetKeyUp (KeyCode.Space))
+		{
+			StopFireLaser();
 		}
 	}
 
@@ -58,6 +52,34 @@ public class PlayerController : MonoBehaviour
 		GameObject laser = Instantiate (laserPrefab, this.transform.position, Quaternion.identity) as GameObject;
 		laser.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0f, laserSpeed);
 		AudioSource.PlayClipAtPoint (laserSound, this.transform.position);
+	}
+
+	void MoveLeft()
+	{
+		this.transform.position = new Vector3 (
+			Mathf.Clamp (this.transform.position.x - playerSpeed * Time.deltaTime, -maxX, maxX), 
+			this.transform.position.y, 
+			0
+		);
+	}
+
+	void MoveRight()
+	{
+		this.transform.position = new Vector3 (
+			Mathf.Clamp (this.transform.position.x + playerSpeed * Time.deltaTime, -maxX, maxX), 
+			this.transform.position.y, 
+			0
+		);
+	}
+
+	void StartFireLaser()
+	{
+		InvokeRepeating ("FireLaser", 0f, firingRate);
+	}
+
+	void StopFireLaser()
+	{
+		CancelInvoke ("FireLaser");
 	}
 
 	void OnTriggerEnter2D (Collider2D collider)
