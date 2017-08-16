@@ -595,16 +595,16 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 502387608}
-          m_MethodName: SetAxisPositiveState
-          m_Mode: 1
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: SetMoveRight
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 1
             m_StringArgument: Horizontal
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 1
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -612,9 +612,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 502387608}
-          m_MethodName: SetAxisNeutralState
-          m_Mode: 1
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: SetMoveRight
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4158,8 +4158,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1263710899}
-          m_MethodName: SetAxisPositiveState
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: StartFireLaser
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4175,8 +4175,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1263710899}
-          m_MethodName: SetAxisNegativeState
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: StopFireLaser
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8147,6 +8147,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf7bd3efe6e8f354d9652450d982c0d1, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1681083962 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11440508, guid: cf7bd3efe6e8f354d9652450d982c0d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1619383275}
+  m_Script: {fileID: 11500000, guid: 7d6fc9cec017c1b4e888d67fc15aedd3, type: 3}
 --- !u!1001 &1706546578
 Prefab:
   m_ObjectHideFlags: 0
@@ -8482,16 +8488,16 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2030974693}
-          m_MethodName: SetAxisNegativeState
-          m_Mode: 1
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: SetMoveLeft
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: -1
             m_StringArgument: Horizontal
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 1
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -8499,9 +8505,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2030974693}
-          m_MethodName: SetAxisNeutralState
-          m_Mode: 1
+        - m_Target: {fileID: 1681083962}
+          m_MethodName: SetMoveLeft
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
