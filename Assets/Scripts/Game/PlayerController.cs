@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 	private float maxY;
 	private float maxX;
 	private float spritePivotToEdge;
+	private bool moveLeft = false;
+	private bool moveRight = false;
 
 	void Start ()
 	{
@@ -32,9 +34,9 @@ public class PlayerController : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.LeftArrow) || moveLeft) {
 			MoveLeft();
-		} else if (Input.GetKey (KeyCode.RightArrow)) {
+		} else if (Input.GetKey (KeyCode.RightArrow) || moveRight) {
 			MoveRight();
 		}
 		if (Input.GetKeyDown (KeyCode.Space))
@@ -72,14 +74,24 @@ public class PlayerController : MonoBehaviour
 		);
 	}
 
-	void StartFireLaser()
+	public void StartFireLaser()
 	{
 		InvokeRepeating ("FireLaser", 0f, firingRate);
 	}
 
-	void StopFireLaser()
+	public void StopFireLaser()
 	{
 		CancelInvoke ("FireLaser");
+	}
+
+	public void SetMoveLeft(bool flag)
+	{
+		moveLeft = flag;
+	}
+
+	public void SetMoveRight(bool flag)
+	{
+		moveRight = flag;
 	}
 
 	void OnTriggerEnter2D (Collider2D collider)
